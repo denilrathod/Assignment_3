@@ -45,6 +45,19 @@ func main() {
 			continue
 		}
 
+		unit := strings.ToUpper(parts[1])
+		switch unit {
+		case "F":
+			celsius := FahrenheitToCelsius(value)
+			fmt.Printf("%.2f F is %.2f C\n", value, celsius)
+		case "C":
+			fahrenheit := CelsiusToFahrenheit(value)
+			fmt.Printf("%.2f C is %.2f F\n", value, fahrenheit)
+		default:
+			fmt.Println("Invalid unit. Please use 'C' for Celsius or 'F' for Fahrenheit.")
+		}
+
+
 	}
 	fmt.Println("Program exited.")
 }
